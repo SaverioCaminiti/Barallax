@@ -1,0 +1,73 @@
+<html>
+<head>
+	<title>Barallax - by Saverio Caminiti</title>
+	<script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+	<script src="../src/Barallax.js"></script>
+
+<style type="text/css">
+body {
+	font: 13pt/16pt Verdana;
+}
+
+#wa {
+	background: #efc;
+	width: 400px;
+	height: 300px;
+	overflow: scroll;
+	padding: 20px;
+	margin: 20px auto;
+	box-shadow: 0 2px 10px black;
+}
+
+#wa p {
+	background: white;
+	border-radius: 10px;
+	padding: 10px;
+	box-shadow: 0px 1px 3px #999;
+}
+
+#wa #photo {
+	background: white url(imgs/photo.png) top center;
+	height: 150px;
+	width: 150px;
+	border-radius: 10px;
+	border: 4px solid white;
+	padding: 10px;
+	box-shadow: 0px 1px 3px #999;
+}
+</style>
+
+<script type="text/javascript">
+"use strict";
+
+$(init);
+function init() {
+	var wap = new Barallax($("#wa"));
+	wap.addBoxedBackground($("#photo"), "50%");
+}
+</script>
+
+</head>
+<body>
+
+<div id="page">
+
+<h1>Barallax - sample3</h1>
+
+<p>WhatsApp chat like parallax effect. Scroll and look at the photo.</p>
+
+
+<div id="wa" class="minipage">
+<p>Scroll down! Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed convallis metus id sapien congue euismod. Maecenas malesuada lorem ut lorem semper.
+<p>Ac feugiat justo congue. Nullam molestie, est ut vehicula condimentum, urna est lobortis mi, non viverra quam nunc at ipsum.</p>
+<p>Curabitur eleifend ut dolor a mollis. Phasellus nec odio nibh. Nunc sit amet libero ultrices, placerat orci vel, vestibulum odio.</p>
+
+<div id="photo"></div>
+
+<p>Maecenas tempor mauris nec purus porttitor vulputate. Aliquam aliquam eros mi, eu lobortis ante luctus ac. Nam eu interdum odio.</p>
+<p>Proin nec felis ullamcorper, volutpat nisl eget, viverra ante. Integer dictum mauris quis scelerisque dictum.</p>
+<p>Ut scelerisque lacus id augue porta, id rutrum ligula finibus. Aenean venenatis hendrerit urna dapibus fringilla. Sed eu congue ante. Nulla efficitur, ante quis aliquet gravida, est nisl commodo justo, sit amet molestie diam arcu ac est. Nam viverra a neque et mattis.</p>
+</div>
+
+</body>
+</html>
