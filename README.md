@@ -29,7 +29,7 @@ And let Barallax slow down the way it scrolls by manipulating `background-positi
 var barallax = new Barallax();
 barallax.addSlowBackground($("body"), "50%", .25);
 ```
-Open to sample1.html to see this in action.
+Open to [sample1](http://saveriocaminiti.github.io/Barallax/samples/sample1.html) to see this in action.
 
 The method `addSlowBackground()` has 3 parameters:
 * target element(s): whose `background-position` should be manipulated. This must be a JQuery object (corresponding to either a single element or to a set of elements in the page DOM).
@@ -49,7 +49,7 @@ The parameter must be a JQuery object and if it refers to a set of elements, onl
 Then you simply call `addSlowBackground()` to add targets.
 You can even have several instances of Barallax that monitor different scrollable elements.
 
-Open to sample2.html to see this in action.
+Open to [sample2](http://saveriocaminiti.github.io/Barallax/samples/sample2.html) to see this in action.
 
 A few final remarks on speed mnultiplier:
 * speed > 1 let the background scroll faster than the page/block, this may be used for some cool effect.
@@ -63,7 +63,7 @@ barallax.addBoxedBackground($(".myTarget"), "50%");
 ```
 This effect assumes that the target is inside the scrolling block, if it is not true you may see something strange due to the fact that vetical background position goes below 0% or over 100%.
 
-Refer to sample3.html for a WhatsApp-like chat effect and to sample4.html for something that resembles the iOS meteo location list.
+Refer to [sample3](http://saveriocaminiti.github.io/Barallax/samples/sample3.html) for a WhatsApp-like chat effect and to [sample4](http://saveriocaminiti.github.io/Barallax/samples/sample4.html) for something that resembles the iOS meteo location list.
 
 ### Remove
 What to remove a background scroll effect previously associated? Just retain the value returned by and add method and use the appropriate remove method. 
