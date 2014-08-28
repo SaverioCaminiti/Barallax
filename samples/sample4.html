@@ -41,13 +41,10 @@ h2.b5 { background: white url(imgs/b5.png); }
 </style>
 
 <script type="text/javascript">
-"use strict";
-
-$(init);
-function init() {
+$(function () { // on DOM ready
 	var wep = new Barallax($("#we"));
 	wep.addBoxedBackground($("#we h2"), "0%");
-}
+});
 </script>
 
 </head>
