@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link href='https://fonts.googleapis.com/css?family=Architects+Daughter' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/pygment_trac.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print">
+
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <title>Barallax by SaverioCaminiti</title>
+  </head>
+
+  <body>
+    <header>
+      <div class="inner">
+        <h1>Barallax</h1>
+        <h2>A simple JS library for nice parallax background effects </h2>
+        <a href="https://github.com/SaverioCaminiti/Barallax" class="button"><small>View project on</small>GitHub</a>
+      </div>
+    </header>
+
+    <div id="content-wrapper">
+      <div class="inner clearfix">
+        <section id="main-content">
+          <h1>
+<a name="barallax" class="anchor" href="#barallax"><span class="octicon octicon-link"></span></a>Barallax</h1>
+
+<p>A simple JS library for nice parallax effects on CSS backgrounds.</p>
+
+<p>Barallax support two parallax effects: <em>slow down background</em> and <em>boxed backgroud</em>.
+The former is the one you can see on Spotify website, Google Play, and many other websites; the latter is used for example by WhatsApp to scroll photos in chat or by the Meteo iOS7 app in list mode if you have many locations.</p>
+
+<p><em>Barallax is based on requestAnimationFrame rather than CSS 3D transformations.</em></p>
+
+<h2>
+<a name="usage" class="anchor" href="#usage"><span class="octicon octicon-link"></span></a>Usage</h2>
+
+<p>In your html file you must include JQuery and the main Barallax.js file.</p>
+
+<div class="highlight highlight-html"><pre><span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"//code.jquery.com/jquery-1.11.0.min.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
+<span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"/yourpath/Barallax.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
+</pre></div>
+
+<h3>
+<a name="slow-down-background" class="anchor" href="#slow-down-background"><span class="octicon octicon-link"></span></a>Slow down background</h3>
+
+<p>To use this effect start by adding some nice background to your page body via CSS, something like this:</p>
+
+<div class="highlight highlight-css"><pre><span class="nt">body</span> <span class="p">{</span>
+    <span class="k">background</span><span class="o">:</span> <span class="m">#eee</span> <span class="sx">url(bg.png)</span> <span class="m">50%</span> <span class="m">0px</span> <span class="k">no-repeat</span><span class="p">;</span>
+    <span class="k">background</span><span class="o">-</span><span class="k">size</span><span class="o">:</span> <span class="m">100%</span> <span class="k">auto</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+
+<p>And let Barallax slow down the way it scrolls by manipulating <code>background-position</code> for you</p>
+
+<div class="highlight highlight-js"><pre><span class="kd">var</span> <span class="nx">barallax</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Barallax</span><span class="p">();</span>
+<span class="nx">barallax</span><span class="p">.</span><span class="nx">addSlowBackground</span><span class="p">(</span><span class="nx">$</span><span class="p">(</span><span class="s2">"body"</span><span class="p">),</span> <span class="s2">"50%"</span><span class="p">,</span> <span class="p">.</span><span class="mi">25</span><span class="p">);</span>
+</pre></div>
+
+<p>Open to sample1.html to see this in action.</p>
+
+<p>The method <code>addSlowBackground()</code> has 3 parameters:</p>
+
+<ul>
+<li>target element(s): whose <code>background-position</code> should be manipulated. This must be a JQuery object (corresponding to either a single element or to a set of elements in the page DOM).</li>
+<li>horizontal background position: this is simply the horizontal component of <code>background-position</code>, use either a percentage or a pixel value here.</li>
+<li>speed multiplier: this tells how slow the background should move with respect to the page scrolling. E.g., if the speed is .25 and the page scrolls by 200px the vertical component of <code>background-position</code> will be 200*.25 = 50px.</li>
+</ul><p>Notice that you can manipulate the <code>background-position</code> of any element based on page scrolling, you're not limited to the body background.</p>
+
+<p>Moreover, you can add several elements to the same instance of Barallax by calling <code>addSlowBackground()</code> more than one time.</p>
+
+<p>Barallax can also monitor the scrolling of block elements other than the main page. Simply specify which block you want Barallax to monitor whe you create it:</p>
+
+<div class="highlight highlight-js"><pre><span class="kd">var</span> <span class="nx">barallax</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Barallax</span><span class="p">(</span><span class="nx">$</span><span class="p">(</span><span class="s1">'#myScrollingBlock'</span><span class="p">));</span>
+</pre></div>
+
+<p>The parameter must be a JQuery object and if it refers to a set of elements, only the first one is used.
+Then you simply call <code>addSlowBackground()</code> to add targets.
+You can even have several instances of Barallax that monitor different scrollable elements.</p>
+
+<p>Open to sample2.html to see this in action.</p>
+
+<p>A few final remarks on speed mnultiplier:</p>
+
+<ul>
+<li>speed &gt; 1 let the background scroll faster than the page/block, this may be used for some cool effect.</li>
+<li>negative speed values let the background scroll in opposite direction with respect to the page/block, kind of crazy.</li>
+</ul><h3>
+<a name="boxed-background" class="anchor" href="#boxed-background"><span class="octicon octicon-link"></span></a>Boxed background</h3>
+
+<p>To apply this effect you simply have to specify target and horizontal background position, the vetical background position is automatically interpolade between 0 and 100% based on the relative position of each target with respect to the scrolling block (or page).</p>
+
+<div class="highlight highlight-js"><pre><span class="nx">barallax</span><span class="p">.</span><span class="nx">addBoxedBackground</span><span class="p">(</span><span class="nx">$</span><span class="p">(</span><span class="s2">".myTarget"</span><span class="p">),</span> <span class="s2">"50%"</span><span class="p">);</span>
+</pre></div>
+
+<p>This effect assumes that the target is inside the scrolling block, if it is not true you may see something strange due to the fact that vetical background position goes below 0% or over 100%.</p>
+
+<p>Refer to sample3.html for a WhatsApp-like chat effect and to sample4.html for something that resembles the iOS meteo location list.</p>
+
+<h3>
+<a name="remove" class="anchor" href="#remove"><span class="octicon octicon-link"></span></a>Remove</h3>
+
+<p>What to remove a background scroll effect previously associated? Just retain the value returned by and add method and use the appropriate remove method. </p>
+
+<div class="highlight highlight-js"><pre><span class="nx">ref</span> <span class="o">=</span> <span class="nx">barallax</span><span class="p">.</span><span class="nx">addSlowBackground</span><span class="p">(</span><span class="nx">$</span><span class="p">(</span><span class="s2">"#myTarget"</span><span class="p">),</span> <span class="s2">"50%"</span><span class="p">,</span> <span class="p">.</span><span class="mi">5</span><span class="p">);</span>
+<span class="p">...</span>
+<span class="nx">barallax</span><span class="p">.</span><span class="nx">removeSlowBackground</span><span class="p">(</span><span class="nx">ref</span><span class="p">);</span>
+</pre></div>
+
+<div class="highlight highlight-js"><pre><span class="nx">ref</span> <span class="o">=</span> <span class="nx">barallax</span><span class="p">.</span><span class="nx">addBoxedBackground</span><span class="p">(</span><span class="nx">$</span><span class="p">(</span><span class="s2">"#myTarget"</span><span class="p">),</span> <span class="s2">"0%"</span><span class="p">);</span>
+<span class="p">...</span>
+<span class="nx">barallax</span><span class="p">.</span><span class="nx">removeBoxedBackground</span><span class="p">(</span><span class="nx">ref</span><span class="p">);</span>
+</pre></div>
+
+<h3>
+<a name="update" class="anchor" href="#update"><span class="octicon octicon-link"></span></a>Update</h3>
+
+<p>Barallax watch for window resize events to update correctly but if you create a Barallax instance for a scrolling block and this block is resized without a window resize (e.g., programmatically) then you have to force the Barallax instance to update manually.</p>
+
+<div class="highlight highlight-js"><pre><span class="nx">barallax</span><span class="p">.</span><span class="nx">update</span><span class="p">();</span>
+</pre></div>
+
+<h2>
+<a name="credits" class="anchor" href="#credits"><span class="octicon octicon-link"></span></a>Credits</h2>
+
+<p>Barallax by <a href="http://saverio.caminiti.eu/">Saverio Caminiti</a> released under MIT license.</p>
+
+<p>Barallax depends on <a href="http://jquery.com/">JQuery</a> and  uses <a href="https://gist.github.com/paulirish/1579671">requestAnimationFrame polyfill</a> by Erik Möller.</p>
+        </section>
+
+        <aside id="sidebar">
+          <a href="https://github.com/SaverioCaminiti/Barallax/zipball/master" class="button">
+            <small>Download</small>
+            .zip file
+          </a>
+          <a href="https://github.com/SaverioCaminiti/Barallax/tarball/master" class="button">
+            <small>Download</small>
+            .tar.gz file
+          </a>
+
+          <p class="repo-owner"><a href="https://github.com/SaverioCaminiti/Barallax"></a> is maintained by <a href="https://github.com/SaverioCaminiti">SaverioCaminiti</a>.</p>
+
+          <p>This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the Architect theme by <a href="https://twitter.com/jasonlong">Jason Long</a>.</p>
+        </aside>
+      </div>
+    </div>
+
+  
+  </body>
+</html>
