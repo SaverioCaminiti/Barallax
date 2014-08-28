@@ -1,0 +1,87 @@
+<html>
+<head>
+	<title>Barallax - by Saverio Caminiti</title>
+	<script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+	<script src="../src/Barallax.js"></script>
+
+<style type="text/css">
+body {
+	font: 13pt/16pt Verdana;
+}
+
+#we {
+	background: #efc;
+	width: 600px;
+	height: 400px;
+	overflow: scroll;
+	padding: 00px;
+	margin: 20px auto;
+	box-shadow: 0 2px 10px black;
+}
+
+#we p {
+	background: white;
+	border-radius: 10px;
+	padding: 10px;
+	box-shadow: 0px 1px 3px #999;
+}
+
+h2 {
+	background: white url(imgs/b1.png);
+	padding: 20px;
+	margin: 0;
+	color: white;
+	text-shadow: 0px 0px 8px black;
+}
+h2.b2 { background: white url(imgs/b2.png); }
+h2.b3 { background: white url(imgs/b3.png); }
+h2.b4 { background: white url(imgs/b4.png); }
+h2.b5 { background: white url(imgs/b5.png); }
+
+</style>
+
+<script type="text/javascript">
+"use strict";
+
+$(init);
+function init() {
+	var wep = new Barallax($("#we"));
+	wep.addBoxedBackground($("#we h2"), "0%");
+}
+</script>
+
+</head>
+<body>
+
+<div id="page">
+
+<h1>Barallax - sample4</h1>
+
+<p>iOS Meteo app like parallax effect. Scroll and pay attention the the backgrounds.</p>
+
+
+<div id="we">
+<h2 class="b1">Rome: sunny</h2>
+<h2 class="b2">Florence: partially cloudy</h2>
+<h2 class="b3">Milan: cloudy</h2>
+<h2 class="b4">London: rainy</h2>
+<h2 class="b5">New York: thunderstorm</h2>
+<h2 class="b1">Rome: sunny</h2>
+<h2 class="b2">Florence: partially cloudy</h2>
+<h2 class="b3">Milan: cloudy</h2>
+<h2 class="b4">London: rainy</h2>
+<h2 class="b5">New York: thunderstorm</h2>
+<h2 class="b1">Rome: sunny</h2>
+<h2 class="b2">Florence: partially cloudy</h2>
+<h2 class="b3">Milan: cloudy</h2>
+<h2 class="b4">London: rainy</h2>
+<h2 class="b5">New York: thunderstorm</h2>
+<h2 class="b1">Rome: sunny</h2>
+<h2 class="b2">Florence: partially cloudy</h2>
+<h2 class="b3">Milan: cloudy</h2>
+<h2 class="b4">London: rainy</h2>
+<h2 class="b5">New York: thunderstorm</h2>
+</div>
+
+</body>
+</html>
