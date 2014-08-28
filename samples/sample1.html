@@ -1,0 +1,57 @@
+<html>
+<head>
+	<title>Barallax - by Saverio Caminiti</title>
+	<script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+	<script src="./Barallax.js"></script>
+
+<style type="text/css">
+body {
+	background: #eee url(imgs/bg.png) no-repeat;
+	background-size: 100% auto;
+	font: 13pt/16pt Verdana;
+	text-align: justify;
+}
+#page {
+	background: rgba(255, 255, 255, .85);
+	border: 3px solid white;
+	width: 80%;
+	max-width: 800px;
+	padding: 20px;
+	border-radius: 20px;
+	box-shadow: 0 0 10px white inset, 0 0 20px white;
+	margin: 150px auto;
+}
+</style>
+
+<script type="text/javascript">
+$(function () { // on DOM ready
+	var par = new Barallax();
+	par.addSlowBackground($("body"), "50%", .25);
+});
+</script>
+
+</head>
+<body>
+
+<div id="page">
+
+<h1>Barallax - sample1</h1>
+
+<p>The body background scrolls slower than the page.</p>
+
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc id semper ex. Phasellus vel dignissim nisl, vitae suscipit risus. Curabitur vitae sapien mollis, posuere risus nec, pellentesque enim. Vivamus aliquam lacinia hendrerit. Donec ultrices maximus lectus, vitae interdum sem pretium at. Donec ornare at urna ut tempor. Vestibulum eros orci, suscipit sit amet tempus non, fermentum eu felis.</p>
+
+<p>Nam lobortis lacinia nisi, eget congue tortor pretium vitae. Donec aliquet et urna sit amet tincidunt. Proin non imperdiet neque, sit amet aliquet ligula. Sed consectetur ex massa, ac accumsan ipsum faucibus nec. Donec urna massa, cursus vitae arcu dictum, ultrices dapibus elit. Cras eu neque ac ante blandit ornare non eget elit. Donec luctus mollis dictum. Cras egestas neque a magna feugiat, ullamcorper scelerisque quam ornare. Pellentesque tincidunt mattis imperdiet. Nullam malesuada diam eget mauris ornare, quis ultrices sem vulputate. Etiam a magna nulla. Sed sodales interdum imperdiet. Quisque vehicula luctus urna vitae sodales.</p>
+
+<p>Ut porttitor turpis at mattis ornare. Phasellus id hendrerit velit, cursus tincidunt nunc. Vestibulum posuere nulla ut est venenatis, dignissim ultrices mauris hendrerit. Sed pellentesque vitae purus quis imperdiet. Duis aliquam sagittis risus eget tempor. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vestibulum sit amet euismod neque. Sed sed tortor at purus condimentum tristique. Duis rutrum tristique elit, quis aliquam purus facilisis quis. Vivamus vel scelerisque dolor. Donec euismod, lectus id accumsan efficitur, neque ante iaculis massa, sit amet fringilla risus magna at nulla. Vivamus finibus lacinia enim.</p>
+
+<p>Nulla quis nibh nec massa dignissim dictum ut a felis. Etiam sit amet risus blandit, consequat tellus id, venenatis nulla. Nam blandit sapien ut quam feugiat venenatis. Quisque ac libero bibendum, vehicula ligula eget, malesuada ligula. Cras sagittis at ipsum a luctus. Praesent vel nisl diam. Aliquam vel imperdiet tortor, vel tempus tortor. Proin facilisis, risus eu maximus porta, ante ipsum mollis sapien, vitae vestibulum magna turpis non elit. Ut non dignissim quam.</p>
+
+<p>Nunc at lectus at libero laoreet lacinia. Nullam non ullamcorper leo. Praesent ante lectus, gravida eget tortor vel, molestie sodales quam. Morbi aliquam sem non elit mattis luctus. Sed vel eleifend mauris, eget iaculis ligula. Sed justo tellus, dictum vitae dictum nec, facilisis eget ligula. Donec vitae efficitur nulla.</p>
+
+<p>Cras ligula velit, interdum nec massa sit amet, varius ullamcorper libero. Curabitur fermentum dolor sed nunc pellentesque hendrerit. Pellentesque quis aliquam ligula. Morbi enim nulla, ultricies in massa ac, dapibus congue est. Nam vulputate dignissim tristique. Sed ullamcorper mauris eu mi scelerisque, nec efficitur nulla lobortis. Donec vulputate libero sed tortor ultricies facilisis. In vestibulum iaculis velit, in tempus erat varius et. Sed sollicitudin pharetra lectus sed tristique. Maecenas laoreet pellentesque ipsum, id maximus mauris vehicula sit amet. Nulla lobortis, velit eget sagittis blandit, elit risus ultrices magna, quis luctus massa mauris a mauris. Fusce ac elit bibendum, eleifend nibh eget, volutpat est. Donec bibendum semper lacus, ac rutrum ante dictum at. Cras sodales nec lorem et sagittis. Mauris maximus mi eget ante posuere viverra id ac lectus.</p>
+
+</div>
+
+</body>
+</html>

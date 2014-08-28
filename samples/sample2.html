@@ -1,0 +1,99 @@
+<html>
+<head>
+	<title>Barallax - by Saverio Caminiti</title>
+	<script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+	<script src="./Barallax.js"></script>
+
+<style type="text/css">
+body {
+	font: 13pt/16pt Verdana;
+	text-align: justify;
+}
+#myScrollingBlock {
+	background: #eee url(imgs/bg.png) no-repeat;
+	width: 80%;
+	max-width: 800px;
+	height: 300px;
+	overflow: scroll;
+	padding: 20px;
+	margin: 10px auto;
+	box-shadow: 0 5px 20px black;
+	text-shadow: 0 0 6px #eee;
+}
+
+h2 {
+	background: black url(imgs/bg.png);
+	color: white;
+	padding: 20px;
+}
+#myScrollingBlock2 {
+	width: 60%;
+	max-width: 800px;
+	height: 300px;
+	overflow: scroll;
+	padding: 20px;
+	margin: 10px auto;
+	text-shadow: 0 0 6px #eee;
+	border-left: 1px solid #ccc;
+	border-right: 1px solid #ccc;
+}
+#myScrollingBlock2out {
+	background: #eee url(imgs/bg2.png);
+	box-shadow: 0 5px 20px black;
+	margin: 10px 10px 30px 10px;
+}
+</style>
+
+<script type="text/javascript">
+$(function () { // on DOM ready
+	var par = new Barallax($('#myScrollingBlock'));
+	par.addSlowBackground($("#myScrollingBlock"), "100%", .5);
+	par.addSlowBackground($("h2"), "0%", .25);
+
+	var par = new Barallax($('#myScrollingBlock2'));
+	par.addSlowBackground($("#myScrollingBlock2out"), "50%", 1);
+
+});
+</script>
+
+</head>
+<body>
+
+<h1>Barallax - sample2</h1>
+
+<p>The background of the following div scrolls slower than the div content.</p>
+
+<div id="myScrollingBlock">
+
+<p>Nam lobortis lacinia nisi, eget congue tortor pretium vitae. Donec aliquet et urna sit amet tincidunt. Proin non imperdiet neque, sit amet aliquet ligula. Sed consectetur ex massa, ac accumsan ipsum faucibus nec. Donec urna massa, cursus vitae arcu dictum, ultrices dapibus elit. Cras eu neque ac ante blandit ornare non eget elit. Donec luctus mollis dictum. Cras egestas neque a magna feugiat, ullamcorper scelerisque quam ornare. Pellentesque tincidunt mattis imperdiet. Nullam malesuada diam eget mauris ornare, quis ultrices sem vulputate. Etiam a magna nulla. Sed sodales interdum imperdiet. Quisque vehicula luctus urna vitae sodales.</p>
+
+<p>Ut porttitor turpis at mattis ornare. Phasellus id hendrerit velit, cursus tincidunt nunc. Vestibulum posuere nulla ut est venenatis, dignissim ultrices mauris hendrerit. Sed pellentesque vitae purus quis imperdiet. Duis aliquam sagittis risus eget tempor. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vestibulum sit amet euismod neque. Sed sed tortor at purus condimentum tristique. Duis rutrum tristique elit, quis aliquam purus facilisis quis. Vivamus vel scelerisque dolor. Donec euismod, lectus id accumsan efficitur, neque ante iaculis massa, sit amet fringilla risus magna at nulla. Vivamus finibus lacinia enim.</p>
+
+<p>Nulla quis nibh nec massa dignissim dictum ut a felis. Etiam sit amet risus blandit, consequat tellus id, venenatis nulla. Nam blandit sapien ut quam feugiat venenatis. Quisque ac libero bibendum, vehicula ligula eget, malesuada ligula. Cras sagittis at ipsum a luctus. Praesent vel nisl diam. Aliquam vel imperdiet tortor, vel tempus tortor. Proin facilisis, risus eu maximus porta, ante ipsum mollis sapien, vitae vestibulum magna turpis non elit. Ut non dignissim quam.</p>
+
+<p>Cras ligula velit, interdum nec massa sit amet, varius ullamcorper libero. Curabitur fermentum dolor sed nunc pellentesque hendrerit. Pellentesque quis aliquam ligula. Morbi enim nulla, ultricies in massa ac, dapibus congue est. Nam vulputate dignissim tristique. Sed ullamcorper mauris eu mi scelerisque, nec efficitur nulla lobortis. Donec vulputate libero sed tortor ultricies facilisis. In vestibulum iaculis velit, in tempus erat varius et. Sed sollicitudin pharetra lectus sed tristique. Maecenas laoreet pellentesque ipsum, id maximus mauris vehicula sit amet. Nulla lobortis, velit eget sagittis blandit, elit risus ultrices magna, quis luctus massa mauris a mauris. Fusce ac elit bibendum, eleifend nibh eget, volutpat est. Donec bibendum semper lacus, ac rutrum ante dictum at. Cras sodales nec lorem et sagittis. Mauris maximus mi eget ante posuere viverra id ac lectus.</p>
+
+</div>
+
+<p>The backgroung of the following element scrolls when the previous div scrolls.</p>
+
+<h2>Sample of binded scroll</h2>
+
+<p>So you can have a scrolling block affect elements everywhere in the page, even outside that block, just like this:</p>
+
+<div id="myScrollingBlock2out">
+<div id="myScrollingBlock2">
+
+<p>Nam lobortis lacinia nisi, eget congue tortor pretium vitae. Donec aliquet et urna sit amet tincidunt. Proin non imperdiet neque, sit amet aliquet ligula. Sed consectetur ex massa, ac accumsan ipsum faucibus nec. Donec urna massa, cursus vitae arcu dictum, ultrices dapibus elit. Cras eu neque ac ante blandit ornare non eget elit. Donec luctus mollis dictum. Cras egestas neque a magna feugiat, ullamcorper scelerisque quam ornare. Pellentesque tincidunt mattis imperdiet. Nullam malesuada diam eget mauris ornare, quis ultrices sem vulputate. Etiam a magna nulla. Sed sodales interdum imperdiet. Quisque vehicula luctus urna vitae sodales.</p>
+
+<p>Ut porttitor turpis at mattis ornare. Phasellus id hendrerit velit, cursus tincidunt nunc. Vestibulum posuere nulla ut est venenatis, dignissim ultrices mauris hendrerit. Sed pellentesque vitae purus quis imperdiet. Duis aliquam sagittis risus eget tempor. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vestibulum sit amet euismod neque. Sed sed tortor at purus condimentum tristique. Duis rutrum tristique elit, quis aliquam purus facilisis quis. Vivamus vel scelerisque dolor. Donec euismod, lectus id accumsan efficitur, neque ante iaculis massa, sit amet fringilla risus magna at nulla. Vivamus finibus lacinia enim.</p>
+
+<p>Nulla quis nibh nec massa dignissim dictum ut a felis. Etiam sit amet risus blandit, consequat tellus id, venenatis nulla. Nam blandit sapien ut quam feugiat venenatis. Quisque ac libero bibendum, vehicula ligula eget, malesuada ligula. Cras sagittis at ipsum a luctus. Praesent vel nisl diam. Aliquam vel imperdiet tortor, vel tempus tortor. Proin facilisis, risus eu maximus porta, ante ipsum mollis sapien, vitae vestibulum magna turpis non elit. Ut non dignissim quam.</p>
+
+<p>Cras ligula velit, interdum nec massa sit amet, varius ullamcorper libero. Curabitur fermentum dolor sed nunc pellentesque hendrerit. Pellentesque quis aliquam ligula. Morbi enim nulla, ultricies in massa ac, dapibus congue est. Nam vulputate dignissim tristique. Sed ullamcorper mauris eu mi scelerisque, nec efficitur nulla lobortis. Donec vulputate libero sed tortor ultricies facilisis. In vestibulum iaculis velit, in tempus erat varius et. Sed sollicitudin pharetra lectus sed tristique. Maecenas laoreet pellentesque ipsum, id maximus mauris vehicula sit amet. Nulla lobortis, velit eget sagittis blandit, elit risus ultrices magna, quis luctus massa mauris a mauris. Fusce ac elit bibendum, eleifend nibh eget, volutpat est. Donec bibendum semper lacus, ac rutrum ante dictum at. Cras sodales nec lorem et sagittis. Mauris maximus mi eget ante posuere viverra id ac lectus.</p>
+
+</div>
+</div>
+
+</body>
+</html>
